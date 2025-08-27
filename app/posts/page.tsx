@@ -1,12 +1,12 @@
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+// import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+// import { redirect } from "next/navigation";
 
 export default async function PostsPage() {
-  const { isAuthenticated } = getKindeServerSession();
+  // const { isAuthenticated } = getKindeServerSession();
 
-  // We will loose the static rendering in this case as it checks for access_token cookies
-  if (!(await isAuthenticated())) redirect("/api/auth/login");
+  // We will loose the static rendering in this case as it checks for access_token cookies. Solution is middleware check which will allow us to render static page as well.
+  // if (!(await isAuthenticated())) redirect("/api/auth/login");
 
   return (
     <main className="max-w-2xl mx-auto p-8 text-gray-100">
